@@ -206,7 +206,7 @@
     ]
   },
   {
-    "id": "columns-banner",
+    "id": "columns",
     "fields": [
       {
         "component": "text",
@@ -225,21 +225,14 @@
     ]
   },
   {
-    "id": "columns",
+    "id": "cta-banner",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
+        "component": "richtext",
+        "name": "text",
         "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
+        "label": "Content",
+        "valueType": "string"
       }
     ]
   },

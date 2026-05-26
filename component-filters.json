@@ -46,21 +46,6 @@
     ]
   },
   {
-    "id": "columns-banner",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
     "id": "columns",
     "components": [
       "column"
@@ -74,6 +59,10 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "cta-banner",
+    "components": []
   },
   {
     "id": "promo-card",

@@ -89,43 +89,32 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-banner.js
+  // tools/importer/parsers/cta-banner.js
   function parse2(element, { document }) {
-    const iconSpan = element.querySelector('span.rt137-strillo-app__icon, span[class*="icon"]');
-    const col1 = [];
-    if (iconSpan) {
-      const iconText = document.createElement("p");
-      iconText.textContent = "\u2B07";
-      col1.push(iconText);
-    }
+    const iconCell = document.createElement("div");
+    const iconP = document.createElement("p");
+    iconP.textContent = "\u2B07";
+    iconCell.appendChild(iconP);
+    const textCell = document.createElement("div");
     const titleDiv = element.querySelector('.rt137-strillo-app__title, [class*="strillo-app__title"]');
     const textDiv = element.querySelector('.rt137-strillo-app__text, [class*="strillo-app__text"]');
-    const col2 = [];
     if (titleDiv) {
-      const titleP = titleDiv.querySelector("p");
-      if (titleP) {
-        col2.push(titleP);
-      } else {
-        col2.push(titleDiv);
-      }
+      const titleP = titleDiv.querySelector("p") || titleDiv;
+      textCell.appendChild(titleP);
     }
     if (textDiv) {
-      const textP = textDiv.querySelector("p");
-      if (textP) {
-        col2.push(textP);
-      } else {
-        col2.push(textDiv);
-      }
+      const textP = textDiv.querySelector("p") || textDiv;
+      textCell.appendChild(textP);
     }
+    const badgeCell = document.createElement("div");
     const ctaLinks = Array.from(element.querySelectorAll('a.rt137-strillo-app__cta, a[class*="strillo-app__cta"]'));
-    const col3 = [];
-    ctaLinks.forEach((link) => {
-      col3.push(link);
-    });
+    ctaLinks.forEach((link) => badgeCell.appendChild(link));
     const cells = [
-      [col1, col2, col3]
+      [iconCell],
+      [textCell],
+      [badgeCell]
     ];
-    const block = WebImporter.Blocks.createBlock(document, { name: "columns-banner", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "CTA Banner", cells });
     element.replaceWith(block);
   }
 
@@ -231,7 +220,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-hey-conad.js
   var parsers = {
     "hero-landing": parse,
-    "columns-banner": parse2,
+    "cta-banner": parse2,
     "promo-card": parse3
   };
   var PAGE_TEMPLATE = {
@@ -244,7 +233,7 @@ var CustomImportScript = (() => {
         instances: ["#rc100-hero-4606449"]
       },
       {
-        name: "columns-banner",
+        name: "cta-banner",
         instances: ["#rc137-strillo-app-429211653"]
       },
       {
@@ -254,7 +243,7 @@ var CustomImportScript = (() => {
     ],
     sections: [
       { id: "section-1", name: "Hero", selector: "section:has(#rc100-hero-4606449)", style: null, blocks: ["hero-landing"], defaultContent: [] },
-      { id: "section-2", name: "App Download Banner", selector: "section:has(#rc137-strillo-app-429211653)", style: null, blocks: ["columns-banner"], defaultContent: [] },
+      { id: "section-2", name: "App Download Banner", selector: "section:has(#rc137-strillo-app-429211653)", style: null, blocks: ["cta-banner"], defaultContent: [] },
       { id: "section-3", name: "Section Title", selector: "section:has(.rt138-richtext-section)", style: null, blocks: [], defaultContent: [".rt138-richtext-section .rt001-richtext p"] },
       { id: "section-4", name: "HeyConad App Service Banner", selector: "section:has(#rc104-service-banner-140342423)", style: "white", blocks: ["promo-card"], defaultContent: [] },
       { id: "section-5", name: "HeyConad Assicurazioni", selector: "section:has(#rc106-lancio-1497915825)", style: "white", blocks: ["promo-card"], defaultContent: [] },

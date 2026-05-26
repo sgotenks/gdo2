@@ -1,6 +1,6 @@
 {
-  "variantName": "columns-banner",
-  "baseBlock": "columns",
+  "variantName": "cta-banner",
+  "baseBlock": "block",
   "version": "1.0.0",
   "created": "2026-05-25T16:25:00.000Z",
   "sourceContext": {

@@ -37,6 +37,7 @@ export default function transform(hookName, element, payload) {
       'header.rt051-header',
       'footer.rt050-footer',
       '#mp-container',
+      '.rt117-breadcrumb',
       'iframe',
       'link',
       'noscript',

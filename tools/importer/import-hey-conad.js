@@ -2,7 +2,7 @@
 /* global WebImporter */
 
 import heroLandingParser from './parsers/hero-landing.js';
-import columnsBannerParser from './parsers/columns-banner.js';
+import ctaBannerParser from './parsers/cta-banner.js';
 import promoCardParser from './parsers/promo-card.js';
 
 import conadCleanupTransformer from './transformers/conad-cleanup.js';
@@ -10,7 +10,7 @@ import conadSectionsTransformer from './transformers/conad-sections.js';
 
 const parsers = {
   'hero-landing': heroLandingParser,
-  'columns-banner': columnsBannerParser,
+  'cta-banner': ctaBannerParser,
   'promo-card': promoCardParser,
 };
 
@@ -24,7 +24,7 @@ const PAGE_TEMPLATE = {
       instances: ['#rc100-hero-4606449'],
     },
     {
-      name: 'columns-banner',
+      name: 'cta-banner',
       instances: ['#rc137-strillo-app-429211653'],
     },
     {
@@ -34,7 +34,7 @@ const PAGE_TEMPLATE = {
   ],
   sections: [
     { id: 'section-1', name: 'Hero', selector: 'section:has(#rc100-hero-4606449)', style: null, blocks: ['hero-landing'], defaultContent: [] },
-    { id: 'section-2', name: 'App Download Banner', selector: 'section:has(#rc137-strillo-app-429211653)', style: null, blocks: ['columns-banner'], defaultContent: [] },
+    { id: 'section-2', name: 'App Download Banner', selector: 'section:has(#rc137-strillo-app-429211653)', style: null, blocks: ['cta-banner'], defaultContent: [] },
     { id: 'section-3', name: 'Section Title', selector: 'section:has(.rt138-richtext-section)', style: null, blocks: [], defaultContent: ['.rt138-richtext-section .rt001-richtext p'] },
     { id: 'section-4', name: 'HeyConad App Service Banner', selector: 'section:has(#rc104-service-banner-140342423)', style: 'white', blocks: ['promo-card'], defaultContent: [] },
     { id: 'section-5', name: 'HeyConad Assicurazioni', selector: 'section:has(#rc106-lancio-1497915825)', style: 'white', blocks: ['promo-card'], defaultContent: [] },

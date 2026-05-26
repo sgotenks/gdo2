@@ -17,7 +17,7 @@
           ]
         },
         {
-          "name": "columns-banner",
+          "name": "cta-banner",
           "instances": [
             "#rc137-strillo-app-429211653"
           ]
@@ -49,7 +49,7 @@
           "selector": "section:has(#rc137-strillo-app-429211653)",
           "style": null,
           "blocks": [
-            "columns-banner"
+            "cta-banner"
           ],
           "defaultContent": []
         },
