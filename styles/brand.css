@@ -1,0 +1,18 @@
+:root {
+  --heading-font-family: "Roboto Slab", serif;
+  --body-font-family: "DM Sans", sans-serif;
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: #999;
+  --link-hover-color: #666;
+  --light-color: #fff9f3;
+  --dark-color: #feeddb;
+  --section-padding: 30px;
+  --nav-height: 34px;
+  --heading-size-xxl: 32px;
+  --heading-size-xl: 28px;
+  --heading-size-l: 24px;
+  --heading-size-m: 24px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+}

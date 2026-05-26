@@ -1,37 +1,109 @@
-.hero-landing-container .hero-landing-wrapper {
-  max-width: unset;
-  padding: 0;
+/* Block: hero-landing
+ * Source: https://www.conad.it/hey-conad (#rc100-hero-4606449)
+ * Layout: text left + image right (desktop), stacked column (mobile)
+ */
+
+/* Full-width wrapper override */
+.hero-landing-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
 }
 
+/* Block base (mobile-first: column layout) */
 .hero-landing {
-  position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0 16px 40px;
+  color: rgb(0 0 0);
 }
 
+/* Rows act as containers for cells */
+.hero-landing > div {
+  width: 100%;
+}
+
+/* Image row */
+.hero-landing > div:first-child {
+  margin-top: 0;
+}
+
+/* Text cell */
+.hero-landing > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading */
 .hero-landing h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  font-size: 32px;
+  font-weight: 500;
+  font-family: var(--heading-font-family);
+  line-height: 40px;
+  letter-spacing: 0.2px;
+  color: rgb(51 51 51);
+  margin: 0 0 16px;
 }
 
+/* Paragraph text */
+.hero-landing p {
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  line-height: 24px;
+  color: rgb(84 84 84);
+  margin: 0 0 8px;
+}
+
+/* Reset p that wraps picture (EDS auto-wraps bare images in p tags) */
+.hero-landing > div:first-child p {
+  margin: 0;
+  line-height: 0;
+}
+
+/* Image styling */
 .hero-landing picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  display: block;
+  line-height: 0;
 }
 
 .hero-landing img {
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
 }
 
+/* Desktop layout */
 @media (width >= 900px) {
   .hero-landing {
-    padding: 40px 32px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 40px;
+    max-width: 1424px;
+    margin: 0 auto;
+    min-height: 352px;
+  }
+
+  /* Text row (visually left, DOM order last) */
+  .hero-landing > div:last-child {
+    flex: 0 0 auto;
+    width: 40%;
+    order: -1;
+  }
+
+  /* Image row (visually right, DOM order first) */
+  .hero-landing > div:first-child {
+    flex: 1 1 auto;
+    width: 60%;
+  }
+
+  .hero-landing h1 {
+    font-size: 48px;
+    line-height: 56px;
+    margin: 0 0 24px;
+  }
+
+  .hero-landing img {
+    height: auto;
   }
 }

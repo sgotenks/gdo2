@@ -1,51 +1,104 @@
-.promo-card > div {
+/* Block: promo-card -- migrated from source computed styles */
+
+/* Mobile-first base styles */
+.promo-card {
   display: flex;
   flex-direction: column;
+  color: var(--text-color);
+  padding: 0 16px;
 }
 
-.promo-card img {
-  width: 100%;
-}
-
-.promo-card > div > div {
-  order: 1;
-}
-
-.promo-card > div > .promo-card-img-col {
+/* Image row first on mobile */
+.promo-card > div:first-child {
   order: 0;
 }
 
-.promo-card > div > .promo-card-img-col img {
-  display: block;
+.promo-card > div:last-child {
+  order: 1;
 }
 
+.promo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Heading */
+.promo-card h2 {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  line-height: 30px;
+  letter-spacing: 0.2px;
+  color: rgb(51 51 51);
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+/* Body text */
+.promo-card p {
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  line-height: 24px;
+  color: rgb(84 84 84);
+}
+
+/* CTA button */
+main .promo-card a.button:any-link {
+  background-color: rgb(235 83 5);
+  color: rgb(255 255 255);
+  padding: 18px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  margin-top: 16px;
+}
+
+main .promo-card a.button:hover {
+  background-color: rgb(200 65 0);
+  color: rgb(255 255 255);
+}
+
+/* Desktop layout: side-by-side columns */
 @media (width >= 900px) {
-  .promo-card > div {
-    align-items: center;
+  .promo-card {
     flex-direction: row;
+    align-items: center;
     gap: 24px;
+    padding: 0 40px;
+    min-height: 500px;
   }
 
-  .promo-card > div > div {
+  .promo-card > div {
     flex: 1;
     order: unset;
   }
 
-  /* Image on the left (default): image col first, text col second */
-  .promo-card.left > div > .promo-card-img-col {
+  .promo-card > div:first-child img {
+    max-height: 500px;
+    object-fit: contain;
+  }
+
+  /* .left: image (row 1) on left, text (row 2) on right */
+  .promo-card.left > div:first-child {
     order: 0;
   }
 
-  .promo-card.left > div > div:not(.promo-card-img-col) {
+  .promo-card.left > div:last-child {
     order: 1;
   }
 
-  /* Image on the right: text col first, image col second */
-  .promo-card.right > div > .promo-card-img-col {
+  /* .right: text (row 2) on left, image (row 1) on right */
+  .promo-card.right > div:first-child {
     order: 1;
   }
 
-  .promo-card.right > div > div:not(.promo-card-img-col) {
+  .promo-card.right > div:last-child {
     order: 0;
   }
 }

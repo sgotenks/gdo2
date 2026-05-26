@@ -1,33 +1,118 @@
+/* Block: columns-banner -- app download banner */
+
+.columns-banner-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.columns-banner {
+  background-color: rgb(245 143 1);
+}
+
 .columns-banner > div {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+  padding: 24px 16px 42px;
+  align-items: flex-start;
 }
 
-.columns-banner img {
-  width: 100%;
+/* Cell 1: Icon */
+.columns-banner > div > div:first-child {
+  flex: 0 0 auto;
+  padding: 18px;
+  font-size: 42px;
+  line-height: 1;
+  color: rgb(255 255 255);
 }
 
-.columns-banner > div > div {
-  order: 1;
+.columns-banner > div > div:first-child p {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1;
+  color: rgb(255 255 255);
 }
 
-.columns-banner > div > .columns-banner-img-col {
-  order: 0;
+/* Cell 2: Text */
+.columns-banner > div > div:nth-child(2) {
+  flex: 1 1 auto;
+  padding: 0;
 }
 
-.columns-banner > div > .columns-banner-img-col img {
+.columns-banner > div > div:nth-child(2) p:first-child {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  line-height: 36px;
+  color: rgb(255 255 255);
+  margin: 0;
+}
+
+.columns-banner > div > div:nth-child(2) p:last-child {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--body-font-family);
+  line-height: 24px;
+  color: rgb(255 255 255);
+  margin: 0;
+}
+
+/* Cell 3: Badges */
+.columns-banner > div > div:nth-child(3) {
+  flex: 0 1 auto;
+  padding: 0;
+  align-self: center;
+}
+
+.columns-banner > div > div:nth-child(3) p:first-child {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  align-items: center;
+}
+
+.columns-banner > div > div:nth-child(3) a {
   display: block;
+  text-decoration: none;
+}
+
+.columns-banner > div > div:nth-child(3) img {
+  max-height: 48px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Button reset — EDS auto-decorates p>a as buttons */
+main .columns-banner a.button:any-link {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  white-space: normal;
+  display: block;
+}
+
+main .columns-banner .button-container {
+  display: inline;
 }
 
 @media (width >= 900px) {
   .columns-banner > div {
-    align-items: center;
-    flex-direction: unset;
+    flex-direction: row;
     gap: 24px;
+    padding: 32px 40px 30px;
+    max-width: 1424px;
+    margin: 0 auto;
+    align-items: center;
   }
 
-  .columns-banner > div > div {
-    flex: 1;
-    order: unset;
+  .columns-banner > div > div:nth-child(3) {
+    align-self: center;
   }
 }
