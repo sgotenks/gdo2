@@ -9,25 +9,25 @@
   background-color: rgb(245 143 1);
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 24px 16px 42px;
+  gap: 16px;
+  padding: 24px 16px;
   align-items: flex-start;
 }
 
-/* Row 1: Icon */
+/* Row 1: Icon — hide text, show icon via background */
 .cta-banner > div:first-child {
   flex: 0 0 auto;
-  padding: 18px;
-  font-size: 42px;
-  line-height: 1;
-  color: rgb(255 255 255);
 }
 
 .cta-banner > div:first-child p {
   margin: 0;
-  font-size: 42px;
-  line-height: 1;
-  color: rgb(255 255 255);
+  width: 48px;
+  height: 48px;
+  font-size: 0;
+  color: transparent;
+  overflow: hidden;
+  background: url('/icons/download.png') no-repeat center center;
+  background-size: 48px 48px;
 }
 
 /* Row 2: Text */
@@ -37,33 +37,33 @@
 }
 
 .cta-banner > div:nth-child(2) p:first-child {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
   font-family: var(--body-font-family);
-  line-height: 36px;
+  line-height: 28px;
   color: rgb(255 255 255);
   margin: 0;
 }
 
 .cta-banner > div:nth-child(2) p:last-child {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   font-family: var(--body-font-family);
-  line-height: 24px;
+  line-height: 20px;
   color: rgb(255 255 255);
-  margin: 0;
+  margin: 4px 0 0;
 }
 
-/* Rows 3-4: Badge images */
+/* Rows 3-4: Badge images — stacked on mobile */
 .cta-banner > div:nth-child(3),
 .cta-banner > div:nth-child(4) {
   flex: 0 0 auto;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .cta-banner > div:nth-child(3) img,
 .cta-banner > div:nth-child(4) img {
-  max-height: 48px;
+  max-height: 40px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -95,11 +95,12 @@ main .cta-banner .button-container {
   display: inline;
 }
 
+/* Desktop: horizontal row layout */
 @media (width >= 900px) {
   .cta-banner {
     flex-direction: row;
     gap: 24px;
-    padding: 40px;
+    padding: 0 40px;
     min-height: 140px;
     max-width: 1424px;
     margin: 0 auto;
@@ -111,8 +112,23 @@ main .cta-banner .button-container {
     flex: 1;
   }
 
+  .cta-banner > div:nth-child(2) p:first-child {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .cta-banner > div:nth-child(2) p:last-child {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
   .cta-banner > div:nth-child(3),
   .cta-banner > div:nth-child(4) {
     align-self: center;
+  }
+
+  .cta-banner > div:nth-child(3) img,
+  .cta-banner > div:nth-child(4) img {
+    max-height: 48px;
   }
 }
