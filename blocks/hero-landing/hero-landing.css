@@ -41,7 +41,18 @@
   line-height: 40px;
   letter-spacing: 0.2px;
   color: rgb(51 51 51);
-  margin: 0 0 16px;
+  margin: 0 0 24px;
+  padding-bottom: 24px;
+  position: relative;
+}
+
+.hero-landing h1::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 4px;
+  background-color: rgb(254 212 4);
+  margin-top: 16px;
 }
 
 /* Paragraph text */
