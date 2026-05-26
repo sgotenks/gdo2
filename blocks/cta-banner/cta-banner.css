@@ -99,10 +99,12 @@ main .cta-banner .button-container {
   .cta-banner {
     flex-direction: row;
     gap: 24px;
-    padding: 32px 40px 30px;
+    padding: 40px;
+    min-height: 140px;
     max-width: 1424px;
     margin: 0 auto;
     align-items: center;
+    box-sizing: border-box;
   }
 
   .cta-banner > div:nth-child(2) {
