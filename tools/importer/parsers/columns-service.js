@@ -3,11 +3,11 @@
 
 /**
  * Parser: columns-service
- * Base block: columns
+ * Base block: block/v1/block (not columns/v1/columns)
  * Source: https://www.conad.it/hey-conad
- * Generated: 2026-05-25
  *
- * Always outputs: image column first, text/CTA column second.
+ * Model fields: image (reference), imageAlt (text, collapsed), text (richtext), classes (select)
+ * Always outputs: image in first cell, text in second cell.
  * The author controls visual layout (image left vs right) via a block class in the Universal Editor.
  */
 export default function parse(element, { document }) {
@@ -63,9 +63,20 @@ export default function parse(element, { document }) {
     imagePosition = 'left';
   }
 
-  // Always: image first cell, text second cell
-  const cells = [[imageCol, textCol]];
-  const blockName = imagePosition === 'left' ? 'columns-service (left)' : 'columns-service (right)';
+  // Build cells: Row 1 = [image cell, text cell]
+  // Add field hints for xwalk model mapping
+  const imageWrapper = document.createElement('div');
+  const imageHint = document.createComment(' field:image ');
+  imageWrapper.appendChild(imageHint);
+  imageCol.forEach((el) => imageWrapper.appendChild(el));
+
+  const textWrapper = document.createElement('div');
+  const textHint = document.createComment(' field:text ');
+  textWrapper.appendChild(textHint);
+  textCol.forEach((el) => textWrapper.appendChild(el));
+
+  const cells = [[imageWrapper, textWrapper]];
+  const blockName = imagePosition === 'left' ? 'Columns Service (left)' : 'Columns Service (right)';
   const block = WebImporter.Blocks.createBlock(document, { name: blockName, cells });
   element.replaceWith(block);
 }

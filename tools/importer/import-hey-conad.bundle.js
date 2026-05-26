@@ -175,8 +175,16 @@ var CustomImportScript = (() => {
       if (cta) textCol.push(cta);
       imagePosition = "left";
     }
-    const cells = [[imageCol, textCol]];
-    const blockName = imagePosition === "left" ? "columns-service (left)" : "columns-service (right)";
+    const imageWrapper = document.createElement("div");
+    const imageHint = document.createComment(" field:image ");
+    imageWrapper.appendChild(imageHint);
+    imageCol.forEach((el) => imageWrapper.appendChild(el));
+    const textWrapper = document.createElement("div");
+    const textHint = document.createComment(" field:text ");
+    textWrapper.appendChild(textHint);
+    textCol.forEach((el) => textWrapper.appendChild(el));
+    const cells = [[imageWrapper, textWrapper]];
+    const blockName = imagePosition === "left" ? "Columns Service (left)" : "Columns Service (right)";
     const block = WebImporter.Blocks.createBlock(document, { name: blockName, cells });
     element.replaceWith(block);
   }

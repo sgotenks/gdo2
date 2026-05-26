@@ -136,14 +136,6 @@
           {
             "name": "Highlight",
             "value": "highlight"
-          },
-          {
-            "name": "White",
-            "value": "white"
-          },
-          {
-            "name": "Light Grey",
-            "value": "light-grey"
           }
         ]
       }
@@ -236,18 +228,25 @@
     "id": "columns-service",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "text",
-        "valueType": "number",
-        "name": "rows",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
         "value": "",
-        "label": "Rows"
+        "label": "Text",
+        "valueType": "string"
       },
       {
         "component": "select",

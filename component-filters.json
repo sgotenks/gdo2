@@ -13,13 +13,10 @@
       "cards",
       "carousel",
       "columns",
-      "columns-banner",
-      "columns-service",
       "embed",
       "fragment",
       "form",
       "hero",
-      "hero-landing",
       "image",
       "quote",
       "search",
@@ -55,10 +52,17 @@
     ]
   },
   {
-    "id": "columns-service",
+    "id": "column",
     "components": [
-      "column"
+      "text",
+      "image",
+      "button",
+      "title"
     ]
+  },
+  {
+    "id": "columns-service",
+    "components": []
   },
   {
     "id": "columns",
@@ -74,10 +78,6 @@
       "button",
       "title"
     ]
-  },
-  {
-    "id": "hero-landing",
-    "components": []
   },
   {
     "id": "table",
