@@ -68,12 +68,12 @@
   align-items: center;
 }
 
-.cta-banner > div:nth-child(3) a {
+.cta-banner a {
   display: block;
   text-decoration: none;
 }
 
-.cta-banner > div:nth-child(3) img {
+.cta-banner img {
   max-height: 48px;
   width: auto;
   height: auto;

@@ -229,9 +229,23 @@
     "fields": [
       {
         "component": "richtext",
+        "name": "icon",
+        "value": "",
+        "label": "Icon",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Content",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "badges",
+        "value": "",
+        "label": "Badges",
         "valueType": "string"
       }
     ]
