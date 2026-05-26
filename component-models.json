@@ -242,11 +242,18 @@
         "valueType": "string"
       },
       {
-        "component": "richtext",
-        "name": "badges",
-        "value": "",
-        "label": "Badges",
-        "valueType": "string"
+        "component": "reference",
+        "name": "appleBadge",
+        "label": "Apple Store Badge",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "name": "googleBadge",
+        "label": "Google Play Badge",
+        "valueType": "string",
+        "multi": false
       }
     ]
   },

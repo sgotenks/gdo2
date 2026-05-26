@@ -106,13 +106,24 @@ var CustomImportScript = (() => {
       const textP = textDiv.querySelector("p") || textDiv;
       textCell.appendChild(textP);
     }
-    const badgeCell = document.createElement("div");
+    const appleCell = document.createElement("div");
     const ctaLinks = Array.from(element.querySelectorAll('a.rt137-strillo-app__cta, a[class*="strillo-app__cta"]'));
-    ctaLinks.forEach((link) => badgeCell.appendChild(link));
+    const appleLink = ctaLinks.find((l) => (l.getAttribute("href") || "").includes("apple"));
+    if (appleLink) {
+      const appleImg = appleLink.querySelector("img");
+      if (appleImg) appleCell.appendChild(appleImg);
+    }
+    const googleCell = document.createElement("div");
+    const googleLink = ctaLinks.find((l) => (l.getAttribute("href") || "").includes("play.google") || (l.getAttribute("href") || "").includes("play.app.goo"));
+    if (googleLink) {
+      const googleImg = googleLink.querySelector("img");
+      if (googleImg) googleCell.appendChild(googleImg);
+    }
     const cells = [
       [iconCell],
       [textCell],
-      [badgeCell]
+      [appleCell],
+      [googleCell]
     ];
     const block = WebImporter.Blocks.createBlock(document, { name: "CTA Banner", cells });
     element.replaceWith(block);

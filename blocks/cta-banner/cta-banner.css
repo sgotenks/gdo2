@@ -54,33 +54,29 @@
   margin: 0;
 }
 
-/* Row 3: Badges */
-.cta-banner > div:nth-child(3) {
-  flex: 0 1 auto;
-  padding: 0;
+/* Rows 3-4: Badge images */
+.cta-banner > div:nth-child(3),
+.cta-banner > div:nth-child(4) {
+  flex: 0 0 auto;
   align-self: center;
 }
 
-.cta-banner > div:nth-child(3) p:first-child {
-  display: flex;
-  gap: 16px;
-  margin: 0;
-  align-items: center;
-}
-
-.cta-banner a {
-  display: block;
-  text-decoration: none;
-}
-
-.cta-banner img {
+.cta-banner > div:nth-child(3) img,
+.cta-banner > div:nth-child(4) img {
   max-height: 48px;
   width: auto;
   height: auto;
   object-fit: contain;
+  display: block;
 }
 
-/* Button reset — EDS auto-decorates p>a as buttons */
+.cta-banner > div:nth-child(3) a,
+.cta-banner > div:nth-child(4) a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Button reset */
 main .cta-banner a.button:any-link {
   background: none;
   border: none;
@@ -109,7 +105,12 @@ main .cta-banner .button-container {
     align-items: center;
   }
 
-  .cta-banner > div:nth-child(3) {
+  .cta-banner > div:nth-child(2) {
+    flex: 1;
+  }
+
+  .cta-banner > div:nth-child(3),
+  .cta-banner > div:nth-child(4) {
     align-self: center;
   }
 }
