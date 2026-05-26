@@ -136,6 +136,14 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Light Grey",
+            "value": "light-grey"
           }
         ]
       }
