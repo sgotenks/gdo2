@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-landing",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-25T16:25:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.conad.it/hey-conad",
+    "originPage": "HeyConad digital services landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "landing-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + image",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "landing pages with hero image",
+      "service overview pages",
+      "product introduction pages"
+    ],
+    "notSuitableFor": [
+      "blog posts without hero images",
+      "text-heavy content pages",
+      "pages with dark background heroes"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/hey-conad"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-25T16:25:00.000Z"
+  }
+}

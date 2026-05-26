@@ -1,0 +1,11 @@
+{
+  "type": "xwalk",
+  "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
+  "previewOrg": "sgotenks",
+  "previewSite": "gdo2",
+  "contentHostUrl": "author-p129757-e1266090.adobeaemcloud.com",
+  "aemSitePath": "/content/gdo2",
+  "aemAssetsFolderPath": "/content/dam/gdo2",
+  "aemSiteName": "gdo2",
+  "aemSiteTitle": "GDO2"
+}

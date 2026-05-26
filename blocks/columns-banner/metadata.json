@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-banner",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-25T16:25:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.conad.it/hey-conad",
+    "originPage": "HeyConad digital services landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "compact",
+    "purpose": "app-download-bar",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + title + subtitle + store badges",
+    "buttonCount": 2,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "app download promotion bars",
+      "compact call-to-action banners",
+      "store badge display sections"
+    ],
+    "notSuitableFor": [
+      "standard content columns",
+      "image-heavy layouts",
+      "multi-row grid content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/hey-conad"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-25T16:25:00.000Z"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "definitions": [
+    {
+      "title": "Columns Service",
+      "id": "columns-service",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/columns",
+            "template": {
+              "columns": "2",
+              "rows": "1"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "columns-service",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "columns",
+          "value": "",
+          "label": "Columns"
+        },
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "rows",
+          "value": "",
+          "label": "Rows"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "left",
+          "label": "Image Position",
+          "options": [
+            { "name": "Left", "value": "left" },
+            { "name": "Right", "value": "right" }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "columns-service",
+      "components": [
+        "column"
+      ]
+    },
+    {
+      "id": "column",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title"
+      ]
+    }
+  ]
+}

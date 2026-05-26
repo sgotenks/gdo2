@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-service",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-25T16:25:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.conad.it/hey-conad",
+    "originPage": "HeyConad digital services landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "service-feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + CTA + image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "service feature presentations",
+      "product highlight sections",
+      "side-by-side content with image and text/CTA",
+      "alternating layout service listings"
+    ],
+    "notSuitableFor": [
+      "compact banner-style layouts",
+      "multi-item grids",
+      "text-only sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/hey-conad"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-25T16:25:00.000Z"
+  }
+}
