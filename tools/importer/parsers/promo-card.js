@@ -74,7 +74,7 @@ export default function parse(element, { document }) {
     [textCell],
   ];
 
-  const blockName = imagePosition === 'left' ? 'Columns Service (left)' : 'Columns Service (right)';
+  const blockName = imagePosition === 'left' ? 'Promo Card (left)' : 'Promo Card (right)';
   const block = WebImporter.Blocks.createBlock(document, { name: blockName, cells });
   element.replaceWith(block);
 }

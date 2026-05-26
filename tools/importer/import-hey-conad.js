@@ -3,7 +3,7 @@
 
 import heroLandingParser from './parsers/hero-landing.js';
 import columnsBannerParser from './parsers/columns-banner.js';
-import columnsServiceParser from './parsers/columns-service.js';
+import promoCardParser from './parsers/promo-card.js';
 
 import conadCleanupTransformer from './transformers/conad-cleanup.js';
 import conadSectionsTransformer from './transformers/conad-sections.js';
@@ -11,7 +11,7 @@ import conadSectionsTransformer from './transformers/conad-sections.js';
 const parsers = {
   'hero-landing': heroLandingParser,
   'columns-banner': columnsBannerParser,
-  'columns-service': columnsServiceParser,
+  'promo-card': promoCardParser,
 };
 
 const PAGE_TEMPLATE = {
@@ -28,7 +28,7 @@ const PAGE_TEMPLATE = {
       instances: ['#rc137-strillo-app-429211653'],
     },
     {
-      name: 'columns-service',
+      name: 'promo-card',
       instances: ['#rc104-service-banner-140342423', '#rc106-lancio-1497915825', '#rc106-lancio-299779392', '#rc106-lancio-2109453761'],
     },
   ],
@@ -36,10 +36,10 @@ const PAGE_TEMPLATE = {
     { id: 'section-1', name: 'Hero', selector: 'section:has(#rc100-hero-4606449)', style: null, blocks: ['hero-landing'], defaultContent: [] },
     { id: 'section-2', name: 'App Download Banner', selector: 'section:has(#rc137-strillo-app-429211653)', style: null, blocks: ['columns-banner'], defaultContent: [] },
     { id: 'section-3', name: 'Section Title', selector: 'section:has(.rt138-richtext-section)', style: null, blocks: [], defaultContent: ['.rt138-richtext-section .rt001-richtext p'] },
-    { id: 'section-4', name: 'HeyConad App Service Banner', selector: 'section:has(#rc104-service-banner-140342423)', style: 'white', blocks: ['columns-service'], defaultContent: [] },
-    { id: 'section-5', name: 'HeyConad Assicurazioni', selector: 'section:has(#rc106-lancio-1497915825)', style: 'white', blocks: ['columns-service'], defaultContent: [] },
-    { id: 'section-6', name: 'HeyConad Spesa Online', selector: 'section:has(#rc106-lancio-299779392)', style: 'white', blocks: ['columns-service'], defaultContent: [] },
-    { id: 'section-7', name: 'HeyConad Viaggi', selector: 'section:has(#rc106-lancio-2109453761)', style: 'white', blocks: ['columns-service'], defaultContent: [] },
+    { id: 'section-4', name: 'HeyConad App Service Banner', selector: 'section:has(#rc104-service-banner-140342423)', style: 'white', blocks: ['promo-card'], defaultContent: [] },
+    { id: 'section-5', name: 'HeyConad Assicurazioni', selector: 'section:has(#rc106-lancio-1497915825)', style: 'white', blocks: ['promo-card'], defaultContent: [] },
+    { id: 'section-6', name: 'HeyConad Spesa Online', selector: 'section:has(#rc106-lancio-299779392)', style: 'white', blocks: ['promo-card'], defaultContent: [] },
+    { id: 'section-7', name: 'HeyConad Viaggi', selector: 'section:has(#rc106-lancio-2109453761)', style: 'white', blocks: ['promo-card'], defaultContent: [] },
     { id: 'section-8', name: 'Footnotes', selector: 'section:has(#rc1-richtext-298676983)', style: null, blocks: [], defaultContent: ['#rc1-richtext-298676983 p'] },
   ],
 };
@@ -80,20 +80,20 @@ function findBlocksOnPage(document, template) {
 
 /**
  * Insert section breaks between block tables after parsers have run.
- * Each columns-service block gets its own section with Section Metadata.
+ * Each promo-card block gets its own section with Section Metadata.
  * <hr> elements as direct children of main act as section dividers.
  */
 function insertSectionBreaks(main, document) {
-  // Find all columns-service block tables
+  // Find all promo-card block tables
   const allTables = [...main.querySelectorAll('table')];
   const serviceTables = allTables.filter((table) => {
     const headerCell = table.querySelector('tr:first-child td, tr:first-child th');
     if (!headerCell) return false;
     const name = headerCell.textContent.trim().toLowerCase();
-    return name.startsWith('columns service') || name.startsWith('columns-service');
+    return name.startsWith('promo card') || name.startsWith('promo-card');
   });
 
-  // For each columns-service table, ensure it's in its own section
+  // For each promo-card table, ensure it's in its own section
   serviceTables.forEach((table) => {
     // Insert <hr> before this block to start a new section
     const hr = document.createElement('hr');
@@ -135,7 +135,7 @@ export default {
 
     executeTransformers('afterTransform', main, payload);
 
-    // Insert section breaks so each columns-service block is in its own section
+    // Insert section breaks so each promo-card block is in its own section
     insertSectionBreaks(main, document);
 
     const hr = document.createElement('hr');

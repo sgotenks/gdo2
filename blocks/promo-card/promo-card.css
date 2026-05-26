@@ -1,0 +1,51 @@
+.promo-card > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.promo-card img {
+  width: 100%;
+}
+
+.promo-card > div > div {
+  order: 1;
+}
+
+.promo-card > div > .promo-card-img-col {
+  order: 0;
+}
+
+.promo-card > div > .promo-card-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .promo-card > div {
+    align-items: center;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .promo-card > div > div {
+    flex: 1;
+    order: unset;
+  }
+
+  /* Image on the left (default): image col first, text col second */
+  .promo-card.left > div > .promo-card-img-col {
+    order: 0;
+  }
+
+  .promo-card.left > div > div:not(.promo-card-img-col) {
+    order: 1;
+  }
+
+  /* Image on the right: text col first, image col second */
+  .promo-card.right > div > .promo-card-img-col {
+    order: 1;
+  }
+
+  .promo-card.right > div > div:not(.promo-card-img-col) {
+    order: 0;
+  }
+}

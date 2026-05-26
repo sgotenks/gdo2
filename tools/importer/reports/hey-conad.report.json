@@ -2,15 +2,15 @@
   "status": "success",
   "url": "https://www.conad.it/hey-conad",
   "path": "hey-conad",
-  "timestamp": "2026-05-26T16:32:37.397Z",
+  "timestamp": "2026-05-26T16:43:04.041Z",
   "title": "Hey Conad | Scarica l’App | Acquista Online i nostri Servizi Digitali | Conad",
   "template": "hey-conad",
   "blocks": [
     "hero-landing",
     "columns-banner",
-    "columns-service",
-    "columns-service",
-    "columns-service",
-    "columns-service"
+    "promo-card",
+    "promo-card",
+    "promo-card",
+    "promo-card"
   ]
 }

@@ -61,10 +61,6 @@
     ]
   },
   {
-    "id": "columns-service",
-    "components": []
-  },
-  {
     "id": "columns",
     "components": [
       "column"
@@ -78,6 +74,10 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "promo-card",
+    "components": []
   },
   {
     "id": "table",

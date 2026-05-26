@@ -190,22 +190,6 @@
           }
         },
         {
-          "title": "Columns Service",
-          "id": "columns-service",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Columns Service",
-                  "model": "columns-service",
-                  "filter": "columns-service"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Columns",
           "id": "columns",
           "plugins": {
@@ -305,6 +289,22 @@
                 "template": {
                   "name": "Modal",
                   "model": "modal"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Promo Card",
+          "id": "promo-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Promo Card",
+                  "model": "promo-card",
+                  "filter": "promo-card"
                 }
               }
             }

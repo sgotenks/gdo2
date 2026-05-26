@@ -129,7 +129,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-service.js
+  // tools/importer/parsers/promo-card.js
   function parse3(element, { document }) {
     const isServiceBanner = element.classList.contains("rt104-service-banner");
     const isLancio = element.classList.contains("rt106-lancio");
@@ -180,7 +180,7 @@ var CustomImportScript = (() => {
       [imageCell],
       [textCell]
     ];
-    const blockName = imagePosition === "left" ? "Columns Service (left)" : "Columns Service (right)";
+    const blockName = imagePosition === "left" ? "Promo Card (left)" : "Promo Card (right)";
     const block = WebImporter.Blocks.createBlock(document, { name: blockName, cells });
     element.replaceWith(block);
   }
@@ -232,7 +232,7 @@ var CustomImportScript = (() => {
   var parsers = {
     "hero-landing": parse,
     "columns-banner": parse2,
-    "columns-service": parse3
+    "promo-card": parse3
   };
   var PAGE_TEMPLATE = {
     name: "hey-conad",
@@ -248,7 +248,7 @@ var CustomImportScript = (() => {
         instances: ["#rc137-strillo-app-429211653"]
       },
       {
-        name: "columns-service",
+        name: "promo-card",
         instances: ["#rc104-service-banner-140342423", "#rc106-lancio-1497915825", "#rc106-lancio-299779392", "#rc106-lancio-2109453761"]
       }
     ],
@@ -256,10 +256,10 @@ var CustomImportScript = (() => {
       { id: "section-1", name: "Hero", selector: "section:has(#rc100-hero-4606449)", style: null, blocks: ["hero-landing"], defaultContent: [] },
       { id: "section-2", name: "App Download Banner", selector: "section:has(#rc137-strillo-app-429211653)", style: null, blocks: ["columns-banner"], defaultContent: [] },
       { id: "section-3", name: "Section Title", selector: "section:has(.rt138-richtext-section)", style: null, blocks: [], defaultContent: [".rt138-richtext-section .rt001-richtext p"] },
-      { id: "section-4", name: "HeyConad App Service Banner", selector: "section:has(#rc104-service-banner-140342423)", style: "white", blocks: ["columns-service"], defaultContent: [] },
-      { id: "section-5", name: "HeyConad Assicurazioni", selector: "section:has(#rc106-lancio-1497915825)", style: "white", blocks: ["columns-service"], defaultContent: [] },
-      { id: "section-6", name: "HeyConad Spesa Online", selector: "section:has(#rc106-lancio-299779392)", style: "white", blocks: ["columns-service"], defaultContent: [] },
-      { id: "section-7", name: "HeyConad Viaggi", selector: "section:has(#rc106-lancio-2109453761)", style: "white", blocks: ["columns-service"], defaultContent: [] },
+      { id: "section-4", name: "HeyConad App Service Banner", selector: "section:has(#rc104-service-banner-140342423)", style: "white", blocks: ["promo-card"], defaultContent: [] },
+      { id: "section-5", name: "HeyConad Assicurazioni", selector: "section:has(#rc106-lancio-1497915825)", style: "white", blocks: ["promo-card"], defaultContent: [] },
+      { id: "section-6", name: "HeyConad Spesa Online", selector: "section:has(#rc106-lancio-299779392)", style: "white", blocks: ["promo-card"], defaultContent: [] },
+      { id: "section-7", name: "HeyConad Viaggi", selector: "section:has(#rc106-lancio-2109453761)", style: "white", blocks: ["promo-card"], defaultContent: [] },
       { id: "section-8", name: "Footnotes", selector: "section:has(#rc1-richtext-298676983)", style: null, blocks: [], defaultContent: ["#rc1-richtext-298676983 p"] }
     ]
   };
@@ -300,7 +300,7 @@ var CustomImportScript = (() => {
       const headerCell = table.querySelector("tr:first-child td, tr:first-child th");
       if (!headerCell) return false;
       const name = headerCell.textContent.trim().toLowerCase();
-      return name.startsWith("columns service") || name.startsWith("columns-service");
+      return name.startsWith("promo card") || name.startsWith("promo-card");
     });
     serviceTables.forEach((table) => {
       const hr = document.createElement("hr");

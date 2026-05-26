@@ -23,7 +23,7 @@
           ]
         },
         {
-          "name": "columns-service",
+          "name": "promo-card",
           "instances": [
             "#rc104-service-banner-140342423",
             "#rc106-lancio-1497915825",
@@ -69,7 +69,7 @@
           "selector": "section:has(#rc104-service-banner-140342423)",
           "style": null,
           "blocks": [
-            "columns-service"
+            "promo-card"
           ],
           "defaultContent": []
         },
@@ -79,7 +79,7 @@
           "selector": "section:has(#rc106-lancio-1497915825)",
           "style": null,
           "blocks": [
-            "columns-service"
+            "promo-card"
           ],
           "defaultContent": []
         },
@@ -89,7 +89,7 @@
           "selector": "section:has(#rc106-lancio-299779392)",
           "style": null,
           "blocks": [
-            "columns-service"
+            "promo-card"
           ],
           "defaultContent": []
         },
@@ -99,7 +99,7 @@
           "selector": "section:has(#rc106-lancio-2109453761)",
           "style": null,
           "blocks": [
-            "columns-service"
+            "promo-card"
           ],
           "defaultContent": []
         },
