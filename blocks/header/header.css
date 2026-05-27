@@ -253,12 +253,12 @@ nav[aria-expanded="true"] .nav-sections {
   .nav-list {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0;
+    justify-content: flex-start;
+    gap: 4px;
     max-width: 1424px;
     margin: 0 auto;
     padding: 0 24px;
-    height: 34px;
+    height: 44px;
   }
 
   .nav-item {
@@ -267,9 +267,35 @@ nav[aria-expanded="true"] .nav-sections {
   }
 
   .nav-item > a {
-    padding: 6px 12px;
+    padding: 10px 14px;
     font-size: 14px;
     white-space: nowrap;
+  }
+
+  /* Chevron arrow for expandable items */
+  .nav-item.has-dropdown > a::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid currentcolor;
+    border-bottom: 1.5px solid currentcolor;
+    transform: rotate(45deg);
+    margin-left: 6px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  .nav-item.is-open > a::after {
+    transform: rotate(-135deg);
+    top: 2px;
+  }
+
+  /* Active page indicator (yellow border below) */
+  .nav-item.is-active > a {
+    border-bottom: 3px solid rgb(254 212 4);
+    padding-bottom: 7px;
   }
 
   /* Dropdown panels (desktop: absolute positioned) */
@@ -296,7 +322,7 @@ nav[aria-expanded="true"] .nav-sections {
     min-width: 200px;
   }
 
-  .nav-dropdown-links li a {
+  .nav-dropdown .nav-dropdown-links li a {
     padding: 6px 0;
     font-size: 14px;
   }

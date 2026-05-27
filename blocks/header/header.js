@@ -90,11 +90,15 @@ function buildNavSections(section, panels) {
       const link = a.cloneNode(true);
       link.className = '';
       const label = link.textContent.trim();
+      const href = link.getAttribute('href');
       const panel = panels.find((p) => p.trigger === label);
       if (panel) {
         li.classList.add('has-dropdown');
         link.setAttribute('aria-expanded', 'false');
         link.href = '#';
+      }
+      if (href && href !== '#' && window.location.pathname.startsWith(href)) {
+        li.classList.add('is-active');
       }
       li.appendChild(link);
       if (panel) {
