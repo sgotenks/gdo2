@@ -1,5 +1,4 @@
 import { getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
 
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
@@ -136,16 +135,14 @@ export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
 
-  const resp = await fetch('/content/nav.plain.html');
+  let resp = await fetch('/content/nav.plain.html');
   if (!resp.ok) {
-    const fragment = await loadFragment(navPath);
-    if (fragment) {
-      block.textContent = '';
-      block.append(fragment);
-      return;
-    }
-    return;
+    resp = await fetch(`${navPath}.plain.html`);
   }
+  if (!resp.ok) {
+    resp = await fetch('/nav.plain.html');
+  }
+  if (!resp.ok) return;
 
   const html = await resp.text();
   const parser = new DOMParser();

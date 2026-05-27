@@ -244,12 +244,10 @@ nav[aria-expanded="true"] .nav-sections {
   .nav-sections {
     display: block;
     border-top: 1px solid #eee;
-  }
-
-  nav[aria-expanded="true"] .nav-sections {
     position: static;
     overflow: visible;
     padding: 0;
+    z-index: 10;
   }
 
   .nav-list {
