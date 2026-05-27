@@ -21,6 +21,7 @@
 
 .promo-card > div:last-child {
   order: 1;
+  margin-top: 24px;
 }
 
 .promo-card img {
@@ -50,7 +51,7 @@
   display: block;
   width: 32px;
   height: 4px;
-  background-color: rgb(235 83 5);
+  background-color: rgb(254 212 4);
   margin-top: 16px;
 }
 
@@ -97,6 +98,7 @@ main .promo-card a.button:hover {
   .promo-card > div {
     flex: 1;
     order: unset;
+    margin-top: 0;
   }
 
   .promo-card > div:first-child {
