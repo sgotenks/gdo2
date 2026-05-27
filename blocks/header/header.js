@@ -49,12 +49,13 @@ function buildBrand(section) {
   hamburger.setAttribute('aria-expanded', 'false');
   hamburger.innerHTML = '<span class="nav-hamburger-icon"></span>';
   brand.appendChild(hamburger);
-  const logoLink = section.querySelector('p a');
-  if (logoLink) {
+  const logoImg = section.querySelector('p img');
+  if (logoImg) {
     const logo = document.createElement('div');
     logo.className = 'nav-logo';
-    const link = logoLink.cloneNode(true);
-    link.className = '';
+    const link = document.createElement('a');
+    link.href = '/';
+    link.appendChild(logoImg.cloneNode(true));
     logo.appendChild(link);
     brand.appendChild(logo);
   }
@@ -156,20 +157,19 @@ export default async function decorate(block) {
   const panelData = [];
   sections.slice(3).forEach((sec) => {
     const heading = sec.querySelector('p');
-    if (!heading || heading.querySelector('a')) return;
+    if (!heading || heading.querySelector('a') || heading.querySelector('img')) return;
     const trigger = heading.textContent.trim();
     const links = [...sec.querySelectorAll('ul li a')].map((a) => ({
       text: a.textContent.trim(),
       href: a.getAttribute('href'),
     }));
-    const featuredImg = sec.querySelector('p a img');
-    const featuredLink = featuredImg ? featuredImg.closest('a') : null;
+    const featuredImg = sec.querySelector('p img');
     panelData.push({
       trigger,
       links,
       featuredImage: featuredImg ? featuredImg.getAttribute('src') : null,
       featuredAlt: featuredImg ? featuredImg.getAttribute('alt') : '',
-      featuredHref: featuredLink ? featuredLink.getAttribute('href') : '#',
+      featuredHref: '#',
     });
   });
 
