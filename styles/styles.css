@@ -261,10 +261,9 @@ main .section.white {
 }
 
 /* Section title (text before promo cards) */
+main .promo-card-container .default-content-wrapper h2,
 main .promo-card-container > div > p:first-child,
-main .promo-card-container > div > h2:first-child,
-main .section.white > div > p:first-child,
-main .section.white > div > h2:first-child {
+main .promo-card-container > div > h2:first-child {
   font-size: 38px;
   font-weight: 700;
   font-family: var(--body-font-family);
