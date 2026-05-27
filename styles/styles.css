@@ -260,19 +260,11 @@ main .section.white {
   padding: 40px 0;
 }
 
-/* Section title (text component before promo cards) */
-main .promo-card-container > div > p:first-child {
-  font-size: 38px;
-  font-weight: 700;
-  font-family: var(--body-font-family);
-  line-height: 1.2;
-  letter-spacing: 0.2px;
-  color: rgb(51 51 51);
-  text-align: center;
-  margin: 0 0 40px;
-}
-
-main .section.white > div > p:first-child {
+/* Section title (text before promo cards) */
+main .promo-card-container > div > p:first-child,
+main .promo-card-container > div > h2:first-child,
+main .section.white > div > p:first-child,
+main .section.white > div > h2:first-child {
   font-size: 38px;
   font-weight: 700;
   font-family: var(--body-font-family);
