@@ -1,5 +1,11 @@
 /* Block: promo-card -- migrated from source computed styles */
 
+/* Full-width wrapper */
+.promo-card-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
 /* Mobile-first base styles */
 .promo-card {
   display: flex;
@@ -33,7 +39,19 @@
   letter-spacing: 0.2px;
   color: rgb(51 51 51);
   margin-top: 0;
-  margin-bottom: 0.25em;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+/* Yellow separator after heading (matches source <hr>) */
+.promo-card h2::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 4px;
+  background-color: rgb(235 83 5);
+  margin-top: 16px;
 }
 
 /* Body text */
@@ -69,9 +87,11 @@ main .promo-card a.button:hover {
   .promo-card {
     flex-direction: row;
     align-items: center;
-    gap: 24px;
-    padding: 0 40px;
+    gap: 40px;
+    padding: 0;
     min-height: 500px;
+    max-width: 1424px;
+    margin: 0 auto;
   }
 
   .promo-card > div {
@@ -79,9 +99,18 @@ main .promo-card a.button:hover {
     order: unset;
   }
 
+  .promo-card > div:first-child {
+    flex: 0 0 50%;
+  }
+
   .promo-card > div:first-child img {
     max-height: 500px;
     object-fit: contain;
+  }
+
+  .promo-card > div:last-child {
+    flex: 0 0 calc(50% - 40px);
+    padding: 0 24px;
   }
 
   /* .left: image (row 1) on left, text (row 2) on right */
