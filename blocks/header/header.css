@@ -13,7 +13,7 @@ header .nav-wrapper {
 /* Topbar — Row 1 */
 .nav-topbar {
   display: none;
-  background-color: #f5f5f5;
+  background-color: rgb(248 246 239);
   font-size: 12px;
   padding: 0 24px;
   height: 34px;
@@ -36,6 +36,20 @@ header .nav-wrapper {
   color: #666;
   text-decoration: none;
   font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-services a::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: currentcolor;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
 }
 
 .nav-services a:hover {
