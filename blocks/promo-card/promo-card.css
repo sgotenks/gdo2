@@ -89,7 +89,7 @@ main .promo-card a.button:hover {
     flex-direction: row;
     align-items: center;
     gap: 40px;
-    padding: 0;
+    padding: 0 40px;
     min-height: 500px;
     max-width: 1424px;
     margin: 0 auto;

@@ -260,6 +260,18 @@ main .section.white {
   padding: 40px 0;
 }
 
+main .section.peach {
+  background-color: rgb(254 237 219);
+  margin: 0;
+  padding: 40px 0;
+}
+
+main .section.cream {
+  background-color: rgb(255 249 243);
+  margin: 0;
+  padding: 40px 0;
+}
+
 /* Section title (text before promo cards) */
 main .promo-card-container .default-content-wrapper h2,
 main .promo-card-container > div > p:first-child,

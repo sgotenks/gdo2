@@ -136,6 +136,22 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Peach",
+            "value": "peach"
+          },
+          {
+            "name": "Cream",
+            "value": "cream"
+          },
+          {
+            "name": "Light Grey",
+            "value": "light-grey"
           }
         ]
       }
