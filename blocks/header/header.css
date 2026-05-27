@@ -253,10 +253,13 @@ nav[aria-expanded="true"] .nav-sections {
 @media (width >= 900px) {
   .nav-topbar {
     display: flex;
+    padding: 0 40px;
+    max-width: 1424px;
+    margin: 0 auto;
   }
 
   .nav-brand {
-    padding: 16px 24px;
+    padding: 16px 40px;
     max-width: 1424px;
     margin: 0 auto;
   }
@@ -285,7 +288,7 @@ nav[aria-expanded="true"] .nav-sections {
     gap: 8px;
     max-width: 1424px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 40px;
     height: 44px;
   }
 
